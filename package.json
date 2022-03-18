@@ -1,0 +1,10 @@
+{
+	"name": "test",
+	"description": "Intermediate service layer for handling events between lenel onGuard and invue access manager",
+	"version": "2.7.16",
+	"pre-commit": {
+		"silent": true,
+		"run": [
+			"lint"
+		]
+	}
