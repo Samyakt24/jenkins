@@ -1,0 +1,29 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  namespace: jenkins-namespace
+  name: jenkins-deployment
+  labels:
+    app: am
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: am
+      tier: am-lenel-broker
+  paused: false
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        app: am
+        tier: am-lenel-broker
+    spec:
+      containers:
+      - image: basicregistrywmp.azurecr.io/test:1.2.1
+        name: test
+        ports:
+        - containerPort: 80
+          name: test
+      imagePullSecrets:
+        - name: mysecret123
