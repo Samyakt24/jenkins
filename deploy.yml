@@ -20,7 +20,7 @@ spec:
         tier: am-lenel-broker
     spec:
       containers:
-      - image: basicregistrywmp.azurecr.io/test:2.7.20
+      - image: basicregistrywmp.azurecr.io/test:latest
         name: test
         ports:
         - containerPort: 80
